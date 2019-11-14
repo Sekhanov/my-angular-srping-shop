@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BootAdminComponent } from './boot-admin/boot-admin.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BootAdminComponent
   ],
   imports: [
     BrowserModule,
