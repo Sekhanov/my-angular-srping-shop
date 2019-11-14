@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "shop-ui",
+            "request": "launch",
+            "mainClass": "com.sekhanov.shopapi.DemoApplication",
+            "projectName": "shop-api"
+        }
+    ]
+}

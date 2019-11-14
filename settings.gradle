@@ -9,4 +9,4 @@
 
 rootProject.name = 'my-angular-srping-shop'
 
-include 'shop-ui'
+include 'shop-ui', 'shop-api'
