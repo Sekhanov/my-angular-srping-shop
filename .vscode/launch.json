@@ -2,10 +2,12 @@
     "configurations": [
         {
             "type": "java",
-            "name": "shop-ui",
+            "name": "shop-api",
             "request": "launch",
             "mainClass": "com.sekhanov.shopapi.DemoApplication",
-            "projectName": "shop-api"
+            "projectName": "shop-api",
+            "cwd": "${workspaceFolder}/shop-api",
+            "preLaunchTask": "liquibase_update"
         }
     ]
 }
