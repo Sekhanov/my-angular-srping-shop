@@ -12,7 +12,7 @@ import { BootAdminComponent } from './boot-admin/boot-admin.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
