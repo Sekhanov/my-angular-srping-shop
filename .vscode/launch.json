@@ -7,7 +7,7 @@
             "mainClass": "com.sekhanov.shopapi.DemoApplication",
             "projectName": "shop-api",
             "cwd": "${workspaceFolder}/shop-api",
-            "preLaunchTask": "liquibase_update"
+            // "preLaunchTask": "liquibase_update"
         }
     ]
 }
