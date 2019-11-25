@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">  
+
+  <changeSet id="1" author="sekhanov">
+    <createTable tableName="users">
+      <column name="id" type="int" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false" />
+      </column>
+      <column name="username" type="varchar(50)">
+        <constraints nullable="false" unique="true" />
+      </column>
+      <column name="password" type="varchar(255)">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="2" author="sekanov">
+    <createTable tableName="roles">
+      <column name="id" type="int" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false" />
+      </column>
+      <column name="name" type="varchar(50)">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="3" author="sekanov">
+    <createTable tableName="user_roles">
+      <column name="user_id" type="int">
+        <constraints nullable="false" foreignKeyName="fk_user_roles_users" referencedTableName="users" referencedColumnNames="id" />
+      </column>
+      <column name="role_id" type="int">
+        <constraints nullable="false" foreignKeyName="fk_user_roles_roles" referencedTableName="roles" referencedColumnNames="id" />
+      </column>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="4" author="sekhanov">
+    <comment>insert auth data</comment>
+    <insert tableName="users">
+      <column name="username" value="admin"></column>
+      <column name="password" value="$2a$04$0CDHZOMOnEVGicY34PvofeJomtXO7O1N/P8CP2uDQUHxUxBlp6Zv."></column>
+    </insert>
+    <insert tableName="users">
+      <column name="username" value="user"></column>
+      <column name="password" value="$2a$04$XWZOH6TZLHjyfv7gTfyQt.Bt3v3jtE3rD2UTl1wDGgQYmcmRR1Y6W"></column>
+    </insert>
+
+    <insert tableName="roles">
+      <column name="name" value="ROLE_ADMIN"></column>
+    </insert>
+    <insert tableName="roles">
+      <column name="name" value="ROLE_USER"></column>
+    </insert>
+
+    <insert tableName="user_roles">
+      <column name="user_id" valueNumeric="1"></column>
+      <column name="role_id" valueNumeric="1"></column>
+    </insert>
+    <insert tableName="user_roles">
+      <column name="user_id" valueNumeric="1"></column>
+      <column name="role_id" valueNumeric="2"></column>
+    </insert>
+    <insert tableName="user_roles">
+        <column name="user_id" valueNumeric="2"></column>
+        <column name="role_id" valueNumeric="2"></column>
+      </insert>
+  </changeSet>
+  
+</databaseChangeLog>

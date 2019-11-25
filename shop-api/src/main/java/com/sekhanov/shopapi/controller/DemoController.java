@@ -12,7 +12,7 @@ import lombok.Setter;
  * DemoController
  */
 @RestController
-@RequestMapping(path = "/demo")
+@RequestMapping("/demo")
 public class DemoController {
     
     @Getter
