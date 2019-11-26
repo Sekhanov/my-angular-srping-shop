@@ -11,6 +11,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,6 +27,7 @@ public class Role {
     private Long id;    
     private String name;
     
+    @JsonIgnore
     @ManyToMany(mappedBy = "roles")   
     private Set<User> users;
 }
