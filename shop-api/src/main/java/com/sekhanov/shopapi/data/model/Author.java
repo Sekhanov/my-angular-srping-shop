@@ -9,23 +9,22 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-@Table(name = "roles")
-public class Role {
+@Table(name = "authors")
+public class Author {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;    
+    private Long id;
     private String name;
+    private String lastName;
+
     
-    // @JsonIgnore
-    @ManyToMany(mappedBy = "roles")   
-    private Set<User> users;
+    @ManyToMany(mappedBy = "authors")
+    private Set<Book> books;
 }
