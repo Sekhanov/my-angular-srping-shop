@@ -32,8 +32,8 @@ public class Book {
     private String name;
 
 
-    @JsonIgnore
-    @ManyToMany(fetch = FetchType.EAGER)    
+    // @JsonIgnore     
+    @ManyToMany(fetch = FetchType.LAZY)    
     @JoinTable(name = "books_authors", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "author_id"))
     private Set<Author> authors;
 

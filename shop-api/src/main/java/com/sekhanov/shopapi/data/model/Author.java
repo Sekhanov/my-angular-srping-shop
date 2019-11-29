@@ -9,6 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.sekhanov.shopapi.json.BookListJsonSerializer;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,6 +28,7 @@ public class Author {
     private String lastName;
 
     
+    @JsonSerialize(using = BookListJsonSerializer.class)
     @ManyToMany(mappedBy = "authors")
     private Set<Book> books;
 }
